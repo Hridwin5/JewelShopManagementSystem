@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - JewelShop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dash-bg">
+  <nav>
+    <button onclick="showSection('jewels')">Jewels</button>
+    <button onclick="showSection('customers')">Customers</button>
+    <button onclick="showSection('orders')">Orders</button>
+    <button onclick="showSection('report')">Sales Report</button>
+    <button onclick="logout()">Logout</button>
+  </nav>
+  <main>
+    <section id="jewels">
+      <h2>Manage Jewels</h2>
+      <form onsubmit="event.preventDefault(); saveJewel();">
+        <input hidden id="editJewelId">
+        <input id="jewelName" placeholder="Name">
+        <input id="pricePerGram" placeholder="Price per Gram">
+        <input id="jewelType" placeholder="Type">
+        <input id="weight" placeholder="Weight">
+        <button>Save</button>
+      </form>
+      <table><thead><tr><th>ID</th><th>Name</th><th>Price/g</th><th>Type</th><th>Weight</th><th>Actions</th></tr></thead><tbody id="jewelTbl"></tbody></table>
+    </section>
+    <section id="customers" class="hidden">
+      <h2>Customer Purchases</h2><table><thead><tr><th>ID</th><th>User ID</th><th>Email</th><th>Phone</th><th>Booking ID</th></tr></thead><tbody id="custTbl"></tbody></table>
+    </section>
+    <section id="orders" class="hidden">
+      <h2>All Bookings (Get from backend)</h2>
+      <!-- Orders admin logic -->
+    </section>
+    <section id="report" class="hidden">
+      <h2>Sales Report</h2>
+      <div id="reportData"></div>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dash-bg">
+  <nav>
+    <button onclick="showSection('catalog')">Catalog</button>
+    <button onclick="showSection('myOrders')">My Orders</button>
+    <button onclick="showSection('profile')">Profile</button>
+    <button onclick="logout()">Logout</button>
+  </nav>
+  <main>
+    <section id="catalog">
+      <h2>Search Jewels</h2>
+      <input id="typeSearch" placeholder="Type">
+      <input id="weightSearch" placeholder="Weight">
+      <button onclick="search()">Search</button>
+      <table><thead><tr><th>Name</th><th>Type</th><th>Price/g</th><th>Weight</th><th>Action</th></tr></thead>
+        <tbody id="catTbl"></tbody>
+      </table>
+    </section>
+    <section id="myOrders" class="hidden">
+      <h2>My Orders</h2>
+      <ul id="ordersList"></ul>
+    </section>
+    <section id="profile" class="hidden">
+      <h2>Profile</h2>
+      <p><strong>Your ID:</strong> <span id="profId"></span></p>
+      <p><strong>Role:</strong> <span id="profRole"></span></p>
+      <p><strong>Name:</strong> <span id="profName"></span></p>
+    </section>
+  </main>
+  <script src="user.js"></script>
+</body>
+</html>
